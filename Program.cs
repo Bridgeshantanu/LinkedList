@@ -17,11 +17,17 @@ namespace LinkedList
             //linkedList.Append(70);
             //linkedList.PrintList();
 
-            linkedList.AddNode(70);
-            linkedList.AddNode(56);
-            linkedList.Insert(56, 70, 30);
-            linkedList.PrintList();
+            //linkedList.AddNode(70);
+            //linkedList.AddNode(56);
+            //linkedList.Insert(56, 70, 30);
+            //linkedList.PrintList();
 
+            linkedList.AddNode(70);
+            linkedList.AddNode(30);
+            linkedList.AddNode(56);
+            linkedList.PrintList();
+            linkedList.Pop();
+            linkedList.PrintList();
 
 
         }

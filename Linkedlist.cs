@@ -58,6 +58,13 @@ namespace LinkedList
                 current = current.next;
             }
         }
+        public void Pop()
+        {
+            if (head != null)
+            {
+                head = head.next;
+            }
+        }
         public void PrintList()
         {
             Node<T> current = head;
