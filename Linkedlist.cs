@@ -27,6 +27,21 @@ namespace LinkedList
                 head = newNode;
             }
         }
+        public void Append(T value)
+        {
+            Node<T> newNode = new Node<T>(value);
+
+            if (head == null)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
         public void PrintList()
         {
             Node<T> current = head;
