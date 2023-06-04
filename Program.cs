@@ -42,6 +42,11 @@ namespace LinkedList
             linkedList.InsertAfter(valueToFind, valueToInsert);
             linkedList.PrintList();
 
+            Console.WriteLine(linkedList.Search(40));
+            linkedList.Delete(40);
+            linkedList.PrintList();
+            int size = linkedList.Size();
+            Console.WriteLine("Linked List Size: " + size);
 
         }
     }
