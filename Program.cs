@@ -35,9 +35,13 @@ namespace LinkedList
             //linkedList.PrintList();
             //linkedList.PopLast();
             //linkedList.PrintList();
-            Console.WriteLine(linkedList.Search(30));
+            //Console.WriteLine(linkedList.Search(30));
+            
+            int valueToFind = 30;
+            int valueToInsert = 40;
+            linkedList.InsertAfter(valueToFind, valueToInsert);
+            linkedList.PrintList();
 
-           
 
         }
     }
