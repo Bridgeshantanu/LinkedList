@@ -32,9 +32,12 @@ namespace LinkedList
             linkedList.AddNode(70);
             linkedList.AddNode(30);
             linkedList.AddNode(56);
-            linkedList.PrintList();
-            linkedList.PopLast();
-            linkedList.PrintList();
+            //linkedList.PrintList();
+            //linkedList.PopLast();
+            //linkedList.PrintList();
+            Console.WriteLine(linkedList.Search(30));
+
+           
 
         }
     }

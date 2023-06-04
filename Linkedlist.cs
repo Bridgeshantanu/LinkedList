@@ -91,6 +91,24 @@ namespace LinkedList
             tail = current;
             tail.next = null;
         }
+        public bool Search(T value)
+        {
+            Node<T> current = head;
+
+            while (current != null)
+            {
+                if (current.data.Equals(value))
+                {
+                    return true;
+                }
+                current = current.next;
+            }
+
+            return false;
+        }
+       
+
+
         public void PrintList()
         {
             Node<T> current = head;
