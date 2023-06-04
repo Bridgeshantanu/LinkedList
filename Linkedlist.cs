@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace LinkedList
 {
-    internal class Linkedlist<T>
+    internal class SortedLinkedlist<T> where T : IComparable
     {
         public Node<T> head;
         public Node<T> tail;
@@ -16,15 +16,21 @@ namespace LinkedList
         {
             Node<T> newNode = new Node<T>(value);
 
-            if (head == null)
-            {
-                head = newNode;
-                tail = newNode;
-            }
-            else
+            if (head == null || value.CompareTo(head.data) <= 0)
             {
                 newNode.next = head;
                 head = newNode;
+            }
+            else
+            {
+                Node<T> current = head;
+                while (current.next != null && value.CompareTo(current.next.data) > 0)
+                {
+                    current = current.next;
+                }
+
+                newNode.next = current.next;
+                current.next = newNode;
             }
         }
         public void Append(T value)
@@ -36,10 +42,26 @@ namespace LinkedList
                 head = newNode;
                 tail = newNode;
             }
-            else
+            else if (value.CompareTo(head.data) <= 0)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else if (value.CompareTo(tail.data) >= 0)
             {
                 tail.next = newNode;
                 tail = newNode;
+            }
+            else
+            {
+                Node<T> current = head;
+                while (current.next != null && value.CompareTo(current.next.data) >= 0)
+                {
+                    current = current.next;
+                }
+
+                newNode.next = current.next;
+                current.next = newNode;
             }
         }
         public void Insert(T value1, T value2, T newValue)
@@ -69,27 +91,26 @@ namespace LinkedList
         {
             if (head == null)
             {
-
                 return;
             }
 
             if (head == tail)
             {
-
                 head = null;
                 tail = null;
                 return;
             }
 
             Node<T> current = head;
-            while (current.next != tail)
+            Node<T> previous = null;
+            while (current.next != null)
             {
+                previous = current;
                 current = current.next;
             }
 
-
-            tail = current;
-            tail.next = null;
+            previous.next = null;
+            tail = previous;
         }
         public bool Search(T value)
         {
@@ -164,6 +185,7 @@ namespace LinkedList
             }
             return size;
         }
+
 
 
         public void PrintList()

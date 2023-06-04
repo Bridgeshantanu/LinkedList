@@ -6,7 +6,7 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            Linkedlist<int> linkedList = new Linkedlist<int>();
+            SortedLinkedlist<int> linkedList = new SortedLinkedlist<int>();
             //linkedList.AddNode(70);
             //linkedList.AddNode(30);
             //linkedList.AddNode(56);
@@ -32,11 +32,11 @@ namespace LinkedList
             linkedList.AddNode(70);
             linkedList.AddNode(30);
             linkedList.AddNode(56);
-            //linkedList.PrintList();
+            linkedList.PrintList();
             //linkedList.PopLast();
             //linkedList.PrintList();
             //Console.WriteLine(linkedList.Search(30));
-            
+
             int valueToFind = 30;
             int valueToInsert = 40;
             linkedList.InsertAfter(valueToFind, valueToInsert);
@@ -47,6 +47,9 @@ namespace LinkedList
             linkedList.PrintList();
             int size = linkedList.Size();
             Console.WriteLine("Linked List Size: " + size);
+
+
+
 
         }
     }
